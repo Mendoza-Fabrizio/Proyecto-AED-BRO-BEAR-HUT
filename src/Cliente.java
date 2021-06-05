@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Cliente {
+public class Cliente extends Persona implements Comparable<Cliente>{
 
     private String idCliente;
     private int idTipo;
@@ -97,7 +97,11 @@ public class Cliente {
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
-    
+    public int compareTo(Cliente o) {
+    	if (id Cliente) {
+    		
+    	}
+    }
     @Override
     public String toString() {
         return idCliente + "|"

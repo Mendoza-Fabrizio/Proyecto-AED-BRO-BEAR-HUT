@@ -445,7 +445,8 @@ public class Datos {
         }
     }
 
-    public void cargarClientes() {
+    @SuppressWarnings("deprecation")
+	public void cargarClientes() {
 
         File archivo = null;
         FileReader fr = null;
@@ -541,7 +542,8 @@ public class Datos {
         }
     }
 
-    public void cargarConfiguracion() {
+    @SuppressWarnings("deprecation")
+	public void cargarConfiguracion() {
 
         File archivo = null;
         FileReader fr = null;

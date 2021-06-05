@@ -14,4 +14,21 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/BSTree.java</name>
+			<type>1</type>
+			<location>E:/GIT POLAR/lab04-bst-Mendoza-Fabrizio/src/BSTree.java</location>
+		</link>
+		<link>
+			<name>src/ItemDuplicated.java</name>
+			<type>1</type>
+			<location>E:/GIT POLAR/lab04-bst-Mendoza-Fabrizio/src/ItemDuplicated.java</location>
+		</link>
+		<link>
+			<name>src/ItemNoFound.java</name>
+			<type>1</type>
+			<location>E:/GIT POLAR/lab04-bst-Mendoza-Fabrizio/src/ItemNoFound.java</location>
+		</link>
+	</linkedResources>
 </projectDescription>

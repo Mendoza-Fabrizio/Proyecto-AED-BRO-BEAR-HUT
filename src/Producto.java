@@ -1,12 +1,9 @@
-
-ackage Clases;
-
-public class Producto {
+public class Producto implements Comparable<Producto>{
 
     private String idProducto;
     private String descripcion;
     private int precio;
-    private int iva; // 0 = 0%, 1 = 10%, 2 = 16%
+    private int iva; 
     private String nota;
 
     public Producto(String idProducto, String descripcion, int precio, int iva, String nota) {
@@ -64,6 +61,17 @@ public class Producto {
                 + precio + "|"
                 + iva + "|"
                 + nota;
+    }
+    public int compareTo(Producto o) {
+    	if(this.getPrecio()<o.getPrecio()) {
+    		return -1;
+    	}
+    	if(this.getPrecio()==o.getPrecio()) {
+    		return 0;
+    	}
+    	else {
+    		return 1;
+    	}
     }
 
 }

@@ -1,6 +1,4 @@
-package Clases;
-
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
 
     private String IdUsuario;
     private String nombres;
@@ -15,7 +13,6 @@ public class Usuario {
         this.clave = clave;
         this.perfil = perfil;
     }
-
     public String getIdUsuario() {
         return IdUsuario;
     }
@@ -55,7 +52,9 @@ public class Usuario {
     public void setPerfil(int perfil) {
         this.perfil = perfil;
     }
-
+    public int compareTo(Usuario o) {
+    	return 1;
+    }
     @Override
     public String toString() {
         return IdUsuario + "|"
@@ -64,5 +63,5 @@ public class Usuario {
                 + clave + "|"
                 + perfil;
     }
-
+    
 }
