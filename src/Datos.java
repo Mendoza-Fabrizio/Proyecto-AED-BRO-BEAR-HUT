@@ -522,9 +522,7 @@ public class Datos {
 
                 fechaIngreso = Utilidades.stringToDate(linea);
 
-                Cliente miCliente = new Cliente(
-                        idCliente, idTipo, nombres, apellidos, direccion,
-                        telefono, idCiudad, fechaNacimiento, fechaIngreso);
+                Cliente miCliente = new Cliente(idCliente, idTipo, nombres,apellidos,direccion,telefono,idCiudad,fechaNacimiento,fechaIngreso);
                 misClientes[conCli] = miCliente;
                 conCli++;
             }

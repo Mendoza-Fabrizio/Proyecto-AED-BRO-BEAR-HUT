@@ -1,15 +1,14 @@
-public class Usuario implements Comparable<Usuario>{
+public class Usuario extends Cliente implements Comparable<Cliente> {
 
     private String IdUsuario;
-    private String nombres;
-    private String apellidos;
     private String clave;
     private int perfil;
-
+    public Usuario() {
+    	super();
+    }
     public Usuario(String IdUsuario, String nombres, String apellidos, String clave, int perfil) {
-        this.IdUsuario = IdUsuario;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+        super(apellidos,nombres);
+    	this.IdUsuario = IdUsuario;
         this.clave = clave;
         this.perfil = perfil;
     }
@@ -19,22 +18,6 @@ public class Usuario implements Comparable<Usuario>{
 
     public void setIdUsuario(String IdUsuario) {
         this.IdUsuario = IdUsuario;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public String getClave() {
@@ -58,8 +41,8 @@ public class Usuario implements Comparable<Usuario>{
     @Override
     public String toString() {
         return IdUsuario + "|"
-                + nombres + "|"
-                + apellidos + "|"
+                + this.getNombres() + "|"
+                + this.getApellidos() + "|"
                 + clave + "|"
                 + perfil;
     }

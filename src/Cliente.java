@@ -1,63 +1,50 @@
 import java.util.Date;
 
 public class Cliente extends Persona implements Comparable<Cliente>{
-
-    private String idCliente;
+	private String IdCliente;
     private int idTipo;
-    private String nombres;
-    private String apellidos;
     private String direccion;
     private String telefono;
     private int idCiudad;
     private Date fechaNacimiento;
     private Date fechaIngreso;
-
-    public Cliente(String idCliente, int idTipo, String nombres,
+    public Cliente() {
+    	
+    }
+    public Cliente(int idCliente, int idTipo, String nombres,String sexo,
             String apellidos, String direccion, String telefono, 
             int idCiudad, Date fechaNacimiento, Date fechaIngreso) {
-        this.idCliente = idCliente;
+    	super(idCliente,apellidos,nombres,sexo);
         this.idTipo = idTipo;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
         this.direccion = direccion;
         this.telefono = telefono;
         this.idCiudad = idCiudad;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaIngreso = fechaIngreso;
     }
-
-    public String getIdCliente() {
-        return idCliente;
+    public Cliente(String nombres, String apellidos) {
+    	super(apellidos,nombres);
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public int getIdTipo() {
-        return idTipo;
+    public Cliente(String idCliente, int idTipo2, String nombres, String apellidos, String direccion2, String telefono2,
+			int idCiudad2, Date fechaNacimiento2, Date fechaIngreso2) {
+		// TODO Auto-generated constructor stub
+    	super(nombres,apellidos);
+    	idCliente = IdCliente;
+    	this.idTipo = idTipo2;
+    	this.direccion = direccion2;
+    	this.telefono = telefono2;
+    	this.idCiudad = idCiudad2;
+    	this.fechaNacimiento = fechaNacimiento2;
+    	this.fechaIngreso = fechaIngreso2;
+	}
+	public int getIdTipo() {
+		return this.idTipo;
     }
 
     public void setIdTipo(int idTipo) {
         this.idTipo = idTipo;
     }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
     public String getDireccion() {
         return direccion;
     }
@@ -93,21 +80,32 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     public Date getFechaIngreso() {
         return fechaIngreso;
     }
-
-    public void setFechaIngreso(Date fechaIngreso) {
+    public String getIdCliente() {
+		return IdCliente;
+	}
+	public void setIdCliente(String idCliente) {
+		IdCliente = idCliente;
+	}
+	public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
     public int compareTo(Cliente o) {
-    	if (id Cliente) {
-    		
+    	if (this.getDni() > o.getDni()) {
+    		return 1;
+    	}
+    	if (this.getDni() == o.getDni()) {
+    		return 0;
+    	}
+    	else {
+    		return -1;
     	}
     }
     @Override
     public String toString() {
-        return idCliente + "|"
+        return this.getDni() + "|"
                 + idTipo + "|"
-                + nombres + "|"
-                + apellidos + "|"
+                + this.getNombres() + "|"
+                + this.getApellidos() + "|"
                 + direccion + "|"
                 + telefono + "|"
                 + idCiudad + "|"
