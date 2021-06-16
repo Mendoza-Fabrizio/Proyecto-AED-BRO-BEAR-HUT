@@ -1,22 +1,22 @@
 public class Usuario extends Cliente implements Comparable<Cliente> {
 
-    private String IdUsuario;
+    private int IdUsuario;
     private String clave;
     private int perfil;
     public Usuario() {
     	super();
     }
-    public Usuario(String IdUsuario, String nombres, String apellidos, String clave, int perfil) {
+    public Usuario(int IdUsuario, String nombres, String apellidos, String clave, int perfil) {
         super(apellidos,nombres);
-    	this.IdUsuario = IdUsuario;
+        this.IdUsuario = IdUsuario;
         this.clave = clave;
         this.perfil = perfil;
     }
-    public String getIdUsuario() {
+    public int getIdUsuario() {
         return IdUsuario;
     }
 
-    public void setIdUsuario(String IdUsuario) {
+    public void setIdUsuario(int IdUsuario) {
         this.IdUsuario = IdUsuario;
     }
 

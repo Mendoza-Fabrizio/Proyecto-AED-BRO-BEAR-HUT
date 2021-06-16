@@ -1,7 +1,7 @@
 import java.util.Date;
 
 public class Cliente extends Persona implements Comparable<Cliente>{
-	private String IdCliente;
+	private int IdCliente;
     private int idTipo;
     private String direccion;
     private String telefono;
@@ -26,7 +26,7 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     	super(apellidos,nombres);
     }
 
-    public Cliente(String idCliente, int idTipo2, String nombres, String apellidos, String direccion2, String telefono2,
+    public Cliente(int idCliente, int idTipo2, String nombres, String apellidos, String direccion2, String telefono2,
 			int idCiudad2, Date fechaNacimiento2, Date fechaIngreso2) {
 		// TODO Auto-generated constructor stub
     	super(nombres,apellidos);
@@ -80,10 +80,10 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     public Date getFechaIngreso() {
         return fechaIngreso;
     }
-    public String getIdCliente() {
+    public int getIdCliente() {
 		return IdCliente;
 	}
-	public void setIdCliente(String idCliente) {
+	public void setIdCliente(int idCliente) {
 		IdCliente = idCliente;
 	}
 	public void setFechaIngreso(Date fechaIngreso) {
@@ -99,6 +99,10 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     	else {
     		return -1;
     	}
+    }
+    public Cliente ingresar() {
+    	Cliente res = null;
+    	return res;
     }
     @Override
     public String toString() {
