@@ -24,11 +24,14 @@ public class BroBearHubInventoryApp {
 		}
 	}
 	public static void comparar(Producto a1, Producto a2) throws ItemNoFound{
-		if(a1.compareTo(a2) == -1) {
+		if(a1.compareTo(a2) == 1) {
 			System.out.println("El producto"+a1.getDescripcion()+" tiene mayor precio que "+a2.getDescripcion());
 		}
-		else {
+		else if(a1.compareTo(a2) == -1) {
 			System.out.println("El producto"+a1.getDescripcion()+" tiene menor precio que "+a2.getDescripcion());
+		}
+		else {
+			System.out.println("son iguales");
 		}
 	}
 
