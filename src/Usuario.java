@@ -1,16 +1,23 @@
-public class Usuario extends Cliente implements Comparable<Cliente> {
+public class Usuario extends Persona implements Comparable<Usuario> {
 
     private int IdUsuario;
+    private String nomUsu;
     private String clave;
     private int perfil;
     public Usuario() {
     	super();
     }
-    public Usuario(int IdUsuario, String nombres, String apellidos, String clave, int perfil) {
+    public Usuario(int IdUsuario, String nomUsu, String nombres, String apellidos, String clave, int perfil) {
         super(apellidos,nombres);
+        this.nomUsu=nomUsu;
         this.IdUsuario = IdUsuario;
         this.clave = clave;
         this.perfil = perfil;
+    }
+    public Usuario(String nomUsu) {
+        super(" "," ");
+        this.nomUsu=nomUsu;
+        
     }
     public int getIdUsuario() {
         return IdUsuario;
@@ -19,7 +26,13 @@ public class Usuario extends Cliente implements Comparable<Cliente> {
     public void setIdUsuario(int IdUsuario) {
         this.IdUsuario = IdUsuario;
     }
+    public String getnomUsu() {
+        return nomUsu;
+    }
 
+    public void setnomUsu(String nomUsu) {
+        this.nomUsu=nomUsu;
+    }
     public String getClave() {
         return clave;
     }
@@ -36,7 +49,7 @@ public class Usuario extends Cliente implements Comparable<Cliente> {
         this.perfil = perfil;
     }
     public int compareTo(Usuario o) {
-    	return 1;
+    	return this.nomUsu.compareTo(o.getnomUsu());
     }
     @Override
     public String toString() {
