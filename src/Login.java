@@ -110,7 +110,7 @@ public class Login {
 					//((JFrame) e.getSource()).dispose();
 					frame.dispose();
 					JOptionPane.showMessageDialog(null, "Bienvenido a Bro Bear Hut");	
-					Principal p= new Principal();
+					Principal p= new Principal(null,null,null);
 					p.frame.setVisible(true);
 				} catch (ItemNoFound e1) {
 					// TODO Auto-generated catch block
