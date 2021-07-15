@@ -1,7 +1,7 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -10,11 +10,10 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 public class Principal {
-
 	JFrame frame;
-
 	/**
 	 * Launch the application.
 	 */
@@ -22,7 +21,7 @@ public class Principal {
 		ArrayList<String> tnd=new ArrayList<String>();
 		ArrayList<Producto> prod=new ArrayList<Producto>();
 		ArrayList<String> nomp=new ArrayList<String>();
-		tnd.add("Plaza vea");
+		tnd.add("Plaza Vea");
 		tnd.add("Tottus");
 		tnd.add("Wong");
 		prod.add(new Producto("Inka kola",6,"Wong"));
@@ -34,7 +33,7 @@ public class Principal {
 		prod.add(new Producto("Pilsen",12,"Wong"));
 		prod.add(new Producto("Pilsen",11,"Tottus"));
 		prod.add(new Producto("Pilsen",10,"Plaza Vea"));
-		nomp.add("Inka Kola");
+		nomp.add("Inka kola");
 		nomp.add("Agua Cielo");
 		nomp.add("Pilsen");
 		EventQueue.invokeLater(new Runnable() {
@@ -75,7 +74,7 @@ public class Principal {
 		frame.getContentPane().add(lblTienda2);
 		
 		JComboBox tienda1 = new JComboBox();
-		tienda1.setModel(new DefaultComboBoxModel(new String[] {"Wong", "Tottus", "Plaza vea"}));
+		tienda1.setModel(new DefaultComboBoxModel(new String[] {"Wong", "Tottus", "Plaza Vea"}));
 		tienda1.setBackground(Color.WHITE);
 		tienda1.setBounds(46, 100, 108, 22);
 		frame.getContentPane().add(tienda1);
@@ -116,12 +115,31 @@ public class Principal {
 		frame.getContentPane().add(Titulo);
 		
 		JButton btnComp = new JButton("Comparar");
-		btnComp.setBounds(163, 227, 89, 23);
+		btnComp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String t1=(String) tienda1.getSelectedItem();
+				String t2=(String) tienda2.getSelectedItem();
+				String p1=(String) producto1.getSelectedItem();
+				String p2=(String) producto2.getSelectedItem();
+				Producto pr1=null;
+				Producto pr2=null;
+				for (Producto p : prod) {					
+					if(p.getDescripcion().compareTo(p1)==0 && p.getTienda().compareTo(t1)==0) pr1=p;	
+					if(p.getDescripcion().compareTo(p2)==0 && p.getTienda().compareTo(t2)==0) pr2=p;		
+				}
+				if (pr1==null || pr2==null) {
+					JOptionPane.showMessageDialog(null, "No se encontro Producto");
+					return;
+				}
+				int comp=pr1.getPrecio();
+				int comp2=pr2.getPrecio();
+				if(comp==comp2) JOptionPane.showMessageDialog(null, "Los productos tienen el mismo precio");	
+				else if(comp>comp2) JOptionPane.showMessageDialog(null, "El producto "+p1+" de la tienda "+t1 +" es mas caro \n diferencia: "+(comp-comp2));
+				else if(comp<comp2) JOptionPane.showMessageDialog(null, "El producto "+p2+" de la tienda "+t2 +" es mas caro \n diferencia: "+(comp2-comp));
+			}
+		});
+		btnComp.setBounds(152, 227, 108, 23);
 		frame.getContentPane().add(btnComp);
-		
-		JLabel lblComp = new JLabel("New label");
-		lblComp.setBounds(185, 195, 46, 14);
-		frame.getContentPane().add(lblComp);
 	}
 }
 
