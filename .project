@@ -14,21 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/BSTree.java</name>
-			<type>1</type>
-			<location>C:/Users/ripley/Desktop/ProyectoAlgoritmos/Proyecto-AED-BRO-BEAR-HUT/src/BSTree.java</location>
-		</link>
-		<link>
-			<name>src/ItemDuplicated.java</name>
-			<type>1</type>
-			<location>C:/Users/ripley/Desktop/ProyectoAlgoritmos/Proyecto-AED-BRO-BEAR-HUT/src/ItemDuplicated.java</location>
-		</link>
-		<link>
-			<name>src/ItemNoFound.java</name>
-			<type>1</type>
-			<location>C:/Users/ripley/Desktop/ProyectoAlgoritmos/Proyecto-AED-BRO-BEAR-HUT/src/ItemNoFound.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>
