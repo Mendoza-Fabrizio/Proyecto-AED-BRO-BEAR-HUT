@@ -2,7 +2,21 @@ public class Producto implements Comparable<Producto>{
 
     private String idProducto;
     private String descripcion;
-    private int precio;
+    private String tienda;
+    public Producto(String descripcion, int precio, String tienda) {
+		super();
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.tienda=tienda;
+	}
+	public String getTienda() {
+		return tienda;
+	}
+
+	public void setTienda(String tienda) {
+		this.tienda = tienda;
+	}
+	private int precio;
     private int iva; 
     private String nota;
 
@@ -56,11 +70,8 @@ public class Producto implements Comparable<Producto>{
     
     @Override
     public String toString() {
-        return idProducto + "|"
-                + descripcion + "|"
-                + precio + "|"
-                + iva + "|"
-                + nota;
+        return descripcion;
+               
     }
     public int compareTo(Producto o) {
     	if(this.getPrecio()<o.getPrecio()) {
