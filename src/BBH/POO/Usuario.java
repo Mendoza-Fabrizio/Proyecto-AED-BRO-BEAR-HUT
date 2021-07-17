@@ -1,7 +1,4 @@
-<<<<<<< HEAD:src/BBH/POO/Usuario.java
 package BBH.POO;
-=======
->>>>>>> 7bea9ae964ed9f73f05c5ab52f74cc7b8de32f48:src/Usuario.java
 public class Usuario extends Persona implements Comparable<Usuario> {
 
     private int IdUsuario;

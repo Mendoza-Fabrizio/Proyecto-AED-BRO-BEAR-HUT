@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
+
+import BBH.POO.Usuario;
+import BBH.tools.BSTree.BSTree;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;
@@ -25,17 +29,13 @@ public class Login {
 
 	/**
 	 * Launch the application.
+	 * @throws BBH.tools.BSTree.ItemDuplicated 
 	 */
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws BBH.tools.BSTree.ItemDuplicated, ItemDuplicated  {
 		BSTree<Usuario> users=new BSTree<Usuario>();
-		try {
-			users.insert(new Usuario(1,"dy0111","Dyanyra","Estrada","123",2));
-			users.insert(new Usuario(2,"fer2608","Fernanda","Diaz","124",2));
-			users.insert(new Usuario(3,"pauleon","Paul","Zapata","126",2));
-		} catch (ItemDuplicated e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		users.insert(new Usuario(1,"dy0111","Dyanyra","Estrada","123",2));
+		users.insert(new Usuario(2,"fer2608","Fernanda","Diaz","124",2));
+		users.insert(new Usuario(3,"pauleon","Paul","Zapata","126",2));
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -112,9 +112,8 @@ public class Login {
 					JOptionPane.showMessageDialog(null, "Bienvenido a Bro Bear Hut");	
 					Principal p= new Principal(null,null,null);
 					p.frame.setVisible(true);
-				} catch (ItemNoFound e1) {
+				} catch (BBH.tools.BSTree.ItemNoFound e1) {
 					// TODO Auto-generated catch block
-					JOptionPane.showMessageDialog(null, "Credenciales incorrectas");	
 					e1.printStackTrace();
 				}			
 			}		
