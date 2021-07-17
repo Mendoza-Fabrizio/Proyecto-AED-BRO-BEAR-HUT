@@ -77,6 +77,7 @@ public class Producto implements Comparable<Producto>{
     public String toString() {
         return descripcion;
                
+<<<<<<< HEAD:src/BBH/POO/Producto.java
     }
     public static void ReporteProductos(ListLinked<Producto> producto) {
     	HashC<Producto> Reporte = new HashC<Producto>(10);
@@ -85,6 +86,8 @@ public class Producto implements Comparable<Producto>{
     	}
     	System.out.println("<========\tReporte de productos\t=======>");
     	System.out.println(Reporte);
+=======
+>>>>>>> 7bea9ae964ed9f73f05c5ab52f74cc7b8de32f48:src/Producto.java
     }
     public int compareTo(Producto o) {
     	if(this.getPrecio()<o.getPrecio()) {
