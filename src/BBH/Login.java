@@ -1,3 +1,4 @@
+package BBH;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -6,6 +7,12 @@ import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
+
+import BBH.POO.Usuario;
+import BBH.tools.BSTree.BSTree;
+import BBH.tools.BSTree.ItemDuplicated;
+import BBH.tools.BSTree.ItemNoFound;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;

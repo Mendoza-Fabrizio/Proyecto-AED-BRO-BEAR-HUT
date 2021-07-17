@@ -1,7 +1,11 @@
+package BBH;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import BBH.POO.Producto;
+
 import javax.swing.JComboBox;
 import java.awt.Font;
 import java.util.ArrayList;

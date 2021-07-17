@@ -1,5 +1,5 @@
+package BBH.POO;
 import java.util.Date;
-
 public class Cliente extends Persona implements Comparable<Cliente>{
 	private int IdCliente;
     private int idTipo;
@@ -14,7 +14,8 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     public Cliente(int idCliente, int idTipo, String nombres,String sexo,
             String apellidos, String direccion, String telefono, 
             int idCiudad, Date fechaNacimiento, Date fechaIngreso) {
-    	super(idCliente,apellidos,nombres,sexo);
+    	super(apellidos,nombres,sexo);
+    	this.IdCliente = idCliente;
         this.idTipo = idTipo;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -90,10 +91,10 @@ public class Cliente extends Persona implements Comparable<Cliente>{
         this.fechaIngreso = fechaIngreso;
     }
     public int compareTo(Cliente o) {
-    	if (this.getDni() > o.getDni()) {
+    	if (this.IdCliente > o.IdCliente) {
     		return 1;
     	}
-    	if (this.getDni() == o.getDni()) {
+    	if (this.IdCliente == o.IdCliente) {
     		return 0;
     	}
     	else {
@@ -106,15 +107,13 @@ public class Cliente extends Persona implements Comparable<Cliente>{
     }
     @Override
     public String toString() {
-        return this.getDni() + "|"
+        return this.IdCliente + "|"
                 + idTipo + "|"
                 + this.getNombres() + "|"
                 + this.getApellidos() + "|"
                 + direccion + "|"
                 + telefono + "|"
-                + idCiudad + "|"
-                + Utilidades.formatDate(fechaNacimiento) + "|"
-                + Utilidades.formatDate(fechaIngreso);
+                + idCiudad + "|";
     }
     
 }

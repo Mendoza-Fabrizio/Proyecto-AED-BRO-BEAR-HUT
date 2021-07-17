@@ -1,4 +1,4 @@
-
+package BBH.tools.BSTree;
 public class ItemNoFound extends Exception{
 	public ItemNoFound(String msg) {
 		super(msg);

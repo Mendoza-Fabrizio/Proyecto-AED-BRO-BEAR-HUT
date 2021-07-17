@@ -1,38 +1,19 @@
-
+package BBH.POO;
 public abstract class Persona {
-	int dni;
 	String Apellidos;
 	String Nombres;
 	String Sexo;
 	public Persona() {
 		
 	}
-	public Persona(int dni,String Apellidos, String Nombre, String Sexo){
-		setDni(dni);
+	public Persona(String Apellidos, String Nombre, String Sexo){
 		this.Apellidos = Apellidos;
 		this.Nombres = Nombre;
 		this.Sexo = Sexo;
 	}
-	public Persona(int dni,String Apellidos, String Nombres){
-		setDni(dni);
+	public Persona(String Apellidos, String Nombres){
 		this.Apellidos = Apellidos;
 		this.Nombres = Nombres;
-	}
-	public Persona(String Apellidos, String Nombre) {
-		this.Apellidos = Apellidos;
-		this.Nombres = Nombre;
-	}
-	public int getDni() {
-		return dni;
-	}
-	public void setDni(int dni) {
-		if(dni>=10000000&&dni<=99999999) {
-			this.dni= dni; 
-		}
-		else {
-			this.dni = 0;
-			System.out.println("Ingresa un dni valido");
-		}
 	}
 	public String getApellidos() {
 		return Apellidos;

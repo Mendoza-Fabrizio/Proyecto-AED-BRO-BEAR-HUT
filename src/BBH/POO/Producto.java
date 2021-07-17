@@ -1,6 +1,11 @@
+package BBH.POO;
+
+import BBH.tools.Hashing.HashC;
+import BBH.tools.elineales.Listas.ListLinked;
+
 public class Producto implements Comparable<Producto>{
 
-    private String idProducto;
+    private int idProducto;
     private String descripcion;
     private String tienda;
     public Producto(String descripcion, int precio, String tienda) {
@@ -20,7 +25,7 @@ public class Producto implements Comparable<Producto>{
     private int iva; 
     private String nota;
 
-    public Producto(String idProducto, String descripcion, int precio, int iva, String nota) {
+    public Producto(int idProducto, String descripcion, int precio, int iva, String nota) {
         this.idProducto = idProducto;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -28,11 +33,11 @@ public class Producto implements Comparable<Producto>{
         this.nota = nota;
     }
 
-    public String getIdProducto() {
+    public int getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(String idProducto) {
+    public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -72,6 +77,14 @@ public class Producto implements Comparable<Producto>{
     public String toString() {
         return descripcion;
                
+    }
+    public static void ReporteProductos(ListLinked<Producto> producto) {
+    	HashC<Producto> Reporte = new HashC<Producto>(10);
+    	for(int i=0;i<producto.length();i++) {
+    		Reporte.insertarEncadenamiento(producto.getNodeAt(i).getData().getIdProducto(), producto.getNodeAt(i).getData());
+    	}
+    	System.out.println("<========\tReporte de productos\t=======>");
+    	System.out.println(Reporte);
     }
     public int compareTo(Producto o) {
     	if(this.getPrecio()<o.getPrecio()) {

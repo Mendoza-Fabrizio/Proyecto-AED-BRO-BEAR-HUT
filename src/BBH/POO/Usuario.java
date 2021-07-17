@@ -1,3 +1,4 @@
+package BBH.POO;
 public class Usuario extends Persona implements Comparable<Usuario> {
 
     private int IdUsuario;
