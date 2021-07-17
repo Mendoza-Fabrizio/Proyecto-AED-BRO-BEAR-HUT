@@ -62,6 +62,7 @@ public class Principal {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void initialize(ArrayList<String> tnd, ArrayList<Producto> prod,ArrayList<String> nomp ) {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.PINK);

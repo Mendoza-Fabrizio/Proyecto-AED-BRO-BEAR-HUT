@@ -36,9 +36,9 @@ public class Login {
 	public static void main(String[] args)  {
 		BSTree<Usuario> users=new BSTree<Usuario>();
 		try {
-			users.insert(new Usuario(1,"dy0111","Dyanyra","Estrada","123",2));
-			users.insert(new Usuario(2,"fer2608","Fernanda","Diaz","124",2));
-			users.insert(new Usuario(3,"pauleon","Paul","Zapata","126",2));
+			users.insert(new Usuario("dy0111","123"));
+			users.insert(new Usuario("fer2608","124"));
+			users.insert(new Usuario("pauleon","126"));
 		} catch (ItemDuplicated e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

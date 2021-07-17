@@ -1,19 +1,33 @@
 package BBH.POO;
+
+import java.util.Scanner;
+
 public class Usuario extends Persona implements Comparable<Usuario> {
 
     private int IdUsuario;
     private String nomUsu;
     private String clave;
     private int perfil;
+    public static int contador = 0;
     public Usuario() {
     	super();
     }
-    public Usuario(int IdUsuario, String nomUsu, String nombres, String apellidos, String clave, int perfil) {
-        super(apellidos,nombres);
+    public Usuario(String nomUsu, String clave) {
+        super();
         this.nomUsu=nomUsu;
-        this.IdUsuario = IdUsuario;
+        contador++;
         this.clave = clave;
         this.perfil = perfil;
+        this.IdUsuario = contador;
+    }
+    public static Usuario AgregarUsuario() {
+    	Scanner s = new Scanner(System.in);
+    	System.out.println("<=======NUEVO USUARIO=======>");
+    	System.out.println("Ingrese un nombre de usuario");
+    	String Nombre= s.next();
+    	System.out.println("Ingrese clave");
+    	String password = s.next();
+    	return new Usuario(Nombre,password);
     }
     public Usuario(String nomUsu) {
         super(" "," ");

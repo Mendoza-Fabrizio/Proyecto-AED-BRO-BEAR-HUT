@@ -62,6 +62,7 @@ public class Principal {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize(ArrayList<String> tnd, ArrayList<Producto> prod,ArrayList<String> nomp ) {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.PINK);
@@ -135,8 +136,8 @@ public class Principal {
 					JOptionPane.showMessageDialog(null, "No se encontro Producto");
 					return;
 				}
-				int comp=pr1.getPrecio();
-				int comp2=pr2.getPrecio();
+				double comp=pr1.getPrecio();
+				double comp2=pr2.getPrecio();
 				if(comp==comp2) JOptionPane.showMessageDialog(null, "Los productos tienen el mismo precio");	
 				else if(comp>comp2) JOptionPane.showMessageDialog(null, "El producto "+p1+" de la tienda "+t1 +" es mas caro \n diferencia: "+(comp-comp2));
 				else if(comp<comp2) JOptionPane.showMessageDialog(null, "El producto "+p2+" de la tienda "+t2 +" es mas caro \n diferencia: "+(comp2-comp));

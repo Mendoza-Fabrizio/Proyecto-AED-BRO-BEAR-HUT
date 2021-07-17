@@ -33,9 +33,9 @@ public class Login {
 	 */
 	public static void main(String[] args) throws BBH.tools.BSTree.ItemDuplicated, ItemDuplicated  {
 		BSTree<Usuario> users=new BSTree<Usuario>();
-		users.insert(new Usuario(1,"dy0111","Dyanyra","Estrada","123",2));
-		users.insert(new Usuario(2,"fer2608","Fernanda","Diaz","124",2));
-		users.insert(new Usuario(3,"pauleon","Paul","Zapata","126",2));
+		users.insert(new Usuario("dy0111","123"));
+		users.insert(new Usuario("fer2608","124"));
+		users.insert(new Usuario("pauleon","126"));
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
