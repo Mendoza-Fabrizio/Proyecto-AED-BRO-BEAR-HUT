@@ -5,10 +5,11 @@ import BBH.POO.Producto;
 import BBH.POO.Proveedores;
 import BBH.POO.Usuario;
 import BBH.tools.BSTree.BSTree;
+import BBH.tools.BSTree.ItemDuplicated;
 import BBH.tools.elineales.Listas.ListLinked;
 public class BroBearHubInventoryApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ItemDuplicated {
 		Scanner in = new Scanner(System.in);
 		BSTree<Cliente> AClientes = new BSTree<Cliente>();
 		ListLinked<Producto> productos = new ListLinked<Producto>();
@@ -29,8 +30,9 @@ public class BroBearHubInventoryApp {
 			case 1:
 				break;
 			case 2:
+				Usuarios.insert(Usuario.AgregarUsuario());
 				break;
-				Usuarios.insert(Usuario.UsuarioAgregarUsuario());
+				
 			case 3:
 				break;
 			case 4:
